@@ -7,17 +7,27 @@ This is a fans app for Nuclias developer.
 ``` bash
 $ nvm use stable
 $ npm install -g @angular/cli
-$ ng new nuclias.app
+$ ng new nuclias-app
 ```
 
 ## Startup Local Development Web Server
 
 ``` bash
+$ cd nuclias-app
 $ ng serve --open
 ```
 
 ## Static Site Generator
 
 ``` bash
-$ yarn add ng-static-site-generator
+$ cd nuclias-app
+$ ng build
+```
+
+## Deploy
+
+``` bash
+$ cd nuclias-app/dist/nuclias-app/
+$ aws s3 sync --profile yihua --acl public-read --exclude .DS_Store . s3://nuclias.app
+
 ```
