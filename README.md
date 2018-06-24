@@ -29,5 +29,12 @@ $ ng build
 ``` bash
 $ cd nuclias-app/dist/nuclias-app/
 $ aws s3 sync --profile yihua --acl public-read --exclude .DS_Store . s3://nuclias.app
+```
 
+## Deploy Frontend Static Files
+
+``` bash
+$ cd ~/bizcloud/manager/build/nodeapp/build/public
+$ aws s3 sync --profile yihua --acl public-read --exclude .DS_Store . s3://nuclias.app
+$ aws s3 sync --profile yihua --acl public-read --exclude .DS_Store data s3://nuclias.app/data
 ```
